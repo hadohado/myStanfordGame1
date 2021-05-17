@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MGameView: View {
+    
     var body: some View {
         ForEach(0..<3) {_ in
             GeometryReader { geometry  in
@@ -15,7 +16,7 @@ struct MGameView: View {
                     RoundedRectangle(cornerRadius: 10 ).fill(Color.white)
                     RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
                     Text("💋")
-                }  
+                }
                 .padding()
                 .font(Font.system(size: min(geometry.size.width, geometry.size.height) * fontScaleFactor ))
                 

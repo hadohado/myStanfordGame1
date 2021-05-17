@@ -11,7 +11,7 @@ struct MGameModel<Content> where Content: Equatable {
   
     var cards: [Card]
     
-    init(cards: [Card]) {
+    init() {
         self.cards = []
     }
     
