@@ -9,7 +9,13 @@ import SwiftUI
 
 class EMGameViewModel : ObservableObject {
     static let emojis: Array<String> = ["😋", "💛", "🍒", "☘️", "👩‍❤️‍👨", "🧲", "🈸", "🇺🇳","🦋" ]
-    @Published  var model: MGameModel<String> = MGameModel(numPairsOfCards: emojis.count, emojis: emojis)
+    // @Published  var model: MGameModel<String> = MGameModel(numPairsOfCards: emojis.count, emojis: emojis)
+    
+    @Published  var model: MGameModel<String>
+        = MGameModel<String>( numberOfPairsOfCards: emojis.count) { pairIndex  in return emojis[pairIndex] }
+        // = MGameModel(numPairsOfCards: emojis.count, emojis: emojis)
+    
+    
     
     var cards: Array<MGameModel<String>.Card> {
         return model.cards

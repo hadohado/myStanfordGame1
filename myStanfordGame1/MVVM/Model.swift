@@ -11,6 +11,9 @@ struct MGameModel<Content> where Content: Equatable {
   
     var cards: [Card] // line 12
     
+    
+    
+    /*
     init(numPairsOfCards: Int, emojis: [String] ) {
         // self.cards = []
         self.cards = Array<Card>() // initialize cards on line 12 to empty Card array
@@ -21,18 +24,24 @@ struct MGameModel<Content> where Content: Equatable {
         }
         cards.shuffle()
     }
+*/
     
-    // return card.id ?
-//    func chooseCard(card: Card) -> Int {
-//        return card.id
-//    }
+    init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> Content ) {
+        cards = Array<Card>()
+        for pairIndex in 0..<numberOfPairsOfCards {
+            // this model doesn't know what the CardContent is, let emojimemorygame viewmodel does it
+            let content = cardContentFactory(pairIndex)
+            cards.append(Card(id: pairIndex * 2    ,  content: content) )
+            cards.append(Card(id: pairIndex * 2 + 1,  content: content) )
+        }
+    }
     
     struct Card: Identifiable {
         var id: Int
         var isFaceUp: Bool = false
         var isMatched: Bool = false
-        var content: String
-        // var content: Content
+        // var content: String
+        var content: Content
     }
     
     
@@ -45,6 +54,9 @@ struct MGameModel<Content> where Content: Equatable {
         }
     }
 
+    //------------------------------------------------------------------
+    // play game by choosing card to turn 1 or 2 cards up to match cards
+    //------------------------------------------------------------------
     mutating func chooseCard(card: Card) {  //    🧲
         
         if  let chosenIndex: Int = cards.firstIndex(matching: card),
@@ -60,6 +72,11 @@ struct MGameModel<Content> where Content: Equatable {
             } else { indexOfTheOneAndOnlyFaceUpCard  = chosenIndex }
         }
     }
+    
+    // my initial code
+    //    func chooseCard(card: Card) -> Int {
+    //        return card.id
+    //    }
     
 //    func index(of card: Card) -> Int {
 //
