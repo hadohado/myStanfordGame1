@@ -9,6 +9,8 @@ import SwiftUI
 
 class EMGameViewModel : ObservableObject {
     static let emojis: Array<String> = ["😋", "💛", "🍒", "☘️", "👩‍❤️‍👨", "🧲", "🈸", "🇺🇳","🦋" ]
+    static let myImage = UIImage(named: "parrot")
+    static let emojisImage: Array<UIImage> = [myImage!]
     // @Published  var model: MGameModel<String> = MGameModel(numPairsOfCards: emojis.count, emojis: emojis)
     
     @Published  var model: MGameModel<String>

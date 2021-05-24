@@ -24,7 +24,7 @@ struct EMGameView: View {
 //        }
 //    }
     var body: some View {
-        
+        VStack {
         // Grid take a func { card in ... } that return
         //      a view & location of view to draw within the Grid
         Grid(viewModel.cards, viewForItem: { card  in
@@ -36,6 +36,11 @@ struct EMGameView: View {
         })
         .padding()
         .foregroundColor(Color.orange)
+            // Text("hi there")
+            Image("parrot").imageScale(.small)
+            
+        }
+            
     }
     
     let cornerRadius: CGFloat = 10.0
