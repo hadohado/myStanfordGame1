@@ -13,7 +13,8 @@ class EMGameViewModel : ObservableObject {
     static let emojisImage: Array<UIImage> = [myImage!]
     // @Published  var model: MGameModel<String> = MGameModel(numPairsOfCards: emojis.count, emojis: emojis)
     
-    @Published  var model: MGameModel<String>
+    // @Published  var model: MGameModel<String>
+    @Published private var model: MGameModel<String>
         = MGameModel<String>( numberOfPairsOfCards: emojis.count) { pairIndex  in return emojis[pairIndex] }
         // = MGameModel(numPairsOfCards: emojis.count, emojis: emojis)
     
