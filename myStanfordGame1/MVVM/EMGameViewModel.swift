@@ -9,9 +9,17 @@ import SwiftUI
 
 class EMGameViewModel : ObservableObject {
     static let emojis: Array<String> = ["😋", "💛", "🍒", "☘️", "👩‍❤️‍👨", "🧲", "🈸", "🇺🇳","🦋" ]
-    var model: MGameModel<String> = MGameModel(numPairsOfCards: emojis.count, emojis: emojis)
+    @Published  var model: MGameModel<String> = MGameModel(numPairsOfCards: emojis.count, emojis: emojis)
     
     var cards: Array<MGameModel<String>.Card> {
         return model.cards
+    }
+    
+    // I need this to make game choose !
+    // MARK: - Intents
+    
+    func choose(card: MGameModel<String>.Card) {
+        // objectWillChange.send() // re-active, dont need object..() since we have @Published above
+        model.choose(card: card)
     }
 }

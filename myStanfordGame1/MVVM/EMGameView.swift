@@ -29,6 +29,9 @@ struct EMGameView: View {
         //      a view & location of view to draw within the Grid
         Grid(viewModel.cards, viewForItem: { card  in
             CardView(card: card)
+                .onTapGesture {
+                    viewModel.choose(card: card)
+                }
             .padding(5)
         })
         .padding()
