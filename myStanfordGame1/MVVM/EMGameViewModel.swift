@@ -20,6 +20,6 @@ class EMGameViewModel : ObservableObject {
     
     func choose(card: MGameModel<String>.Card) {
         // objectWillChange.send() // re-active, dont need object..() since we have @Published above
-        model.choose(card: card)
+        model.chooseCard(card: card)
     }
 }

@@ -23,9 +23,9 @@ struct MGameModel<Content> where Content: Equatable {
     }
     
     // return card.id ?
-    func chooseCard(card: Card) -> Int {
-        return card.id
-    }
+//    func chooseCard(card: Card) -> Int {
+//        return card.id
+//    }
     
     struct Card: Identifiable {
         var id: Int
@@ -45,7 +45,7 @@ struct MGameModel<Content> where Content: Equatable {
         }
     }
 
-    mutating func choose(card: Card) {  //    🧲
+    mutating func chooseCard(card: Card) {  //    🧲
         
         if  let chosenIndex: Int = cards.firstIndex(matching: card),
             !cards[chosenIndex].isFaceUp,
