@@ -61,13 +61,13 @@ struct MGameModel<Content> where Content: Equatable {
         }
     }
     
-    func index(of card: Card) -> Int {
-        
-        for idx in 0..<cards.count {
-            if cards[idx].id == card.id { return idx }
-        }
-        return 0 // TODO: bogus! need to fix this code
-    }
+//    func index(of card: Card) -> Int {
+//
+//        for idx in 0..<cards.count {
+//            if cards[idx].id == card.id { return idx }
+//        }
+//        return 0 // TODO: bogus! need to fix this code
+//    }
 }
 
 
