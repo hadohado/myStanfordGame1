@@ -7,29 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4232BB265B8C1600F871EA /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4232BA265B8C1600F871EA /* Grid.swift */; };
+		2C4232C0265B8D9A00F871EA /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4232BF265B8D9A00F871EA /* GridLayout.swift */; };
+		2C4232C2265B8E0100F871EA /* Array+Itentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4232C1265B8E0100F871EA /* Array+Itentifiable.swift */; };
+		2C4232C4265B8E0A00F871EA /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4232C3265B8E0A00F871EA /* Array+Only.swift */; };
 		2CD77CAE265323820018C251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD77CAD265323820018C251 /* AppDelegate.swift */; };
 		2CD77CB0265323820018C251 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD77CAF265323820018C251 /* SceneDelegate.swift */; };
-		2CD77CB2265323820018C251 /* MGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD77CB1265323820018C251 /* MGameView.swift */; };
+		2CD77CB2265323820018C251 /* EMGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD77CB1265323820018C251 /* EMGameView.swift */; };
 		2CD77CB5265323820018C251 /* myStanfordGame1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CD77CB3265323820018C251 /* myStanfordGame1.xcdatamodeld */; };
 		2CD77CB7265323830018C251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD77CB6265323830018C251 /* Assets.xcassets */; };
 		2CD77CBA265323830018C251 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD77CB9265323830018C251 /* Preview Assets.xcassets */; };
 		2CD77CBD265323830018C251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD77CBB265323830018C251 /* LaunchScreen.storyboard */; };
 		2CD77CC5265324B80018C251 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD77CC4265324B80018C251 /* Model.swift */; };
-		2CD77CC726532F4A0018C251 /* MGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD77CC626532F4A0018C251 /* MGameViewModel.swift */; };
+		2CD77CC726532F4A0018C251 /* EMGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD77CC626532F4A0018C251 /* EMGameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C4232BA265B8C1600F871EA /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		2C4232BF265B8D9A00F871EA /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		2C4232C1265B8E0100F871EA /* Array+Itentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Itentifiable.swift"; sourceTree = "<group>"; };
+		2C4232C3265B8E0A00F871EA /* Array+Only.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
 		2CD77CAA265323820018C251 /* myStanfordGame1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myStanfordGame1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD77CAD265323820018C251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CD77CAF265323820018C251 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2CD77CB1265323820018C251 /* MGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGameView.swift; sourceTree = "<group>"; };
+		2CD77CB1265323820018C251 /* EMGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMGameView.swift; sourceTree = "<group>"; };
 		2CD77CB4265323820018C251 /* myStanfordGame1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myStanfordGame1.xcdatamodel; sourceTree = "<group>"; };
 		2CD77CB6265323830018C251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CD77CB9265323830018C251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2CD77CBC265323830018C251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CD77CBE265323830018C251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CD77CC4265324B80018C251 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		2CD77CC626532F4A0018C251 /* MGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MGameViewModel.swift; sourceTree = "<group>"; };
+		2CD77CC626532F4A0018C251 /* EMGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMGameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C4232BC265B8D3F00F871EA /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				2CD77CAD265323820018C251 /* AppDelegate.swift */,
+				2CD77CAF265323820018C251 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		2C4232BD265B8D5900F871EA /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				2CD77CC4265324B80018C251 /* Model.swift */,
+				2CD77CC626532F4A0018C251 /* EMGameViewModel.swift */,
+				2CD77CB1265323820018C251 /* EMGameView.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		2C4232BE265B8D6E00F871EA /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2C4232BA265B8C1600F871EA /* Grid.swift */,
+				2C4232BF265B8D9A00F871EA /* GridLayout.swift */,
+				2C4232C3265B8E0A00F871EA /* Array+Only.swift */,
+				2C4232C1265B8E0100F871EA /* Array+Itentifiable.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		2CD77CA1265323820018C251 = {
 			isa = PBXGroup;
 			children = (
@@ -62,11 +100,9 @@
 		2CD77CAC265323820018C251 /* myStanfordGame1 */ = {
 			isa = PBXGroup;
 			children = (
-				2CD77CAD265323820018C251 /* AppDelegate.swift */,
-				2CD77CAF265323820018C251 /* SceneDelegate.swift */,
-				2CD77CB1265323820018C251 /* MGameView.swift */,
-				2CD77CC626532F4A0018C251 /* MGameViewModel.swift */,
-				2CD77CC4265324B80018C251 /* Model.swift */,
+				2C4232BC265B8D3F00F871EA /* Delegate */,
+				2C4232BD265B8D5900F871EA /* MVVM */,
+				2C4232BE265B8D6E00F871EA /* Support */,
 				2CD77CB6265323830018C251 /* Assets.xcassets */,
 				2CD77CBB265323830018C251 /* LaunchScreen.storyboard */,
 				2CD77CBE265323830018C251 /* Info.plist */,
@@ -156,10 +192,14 @@
 			files = (
 				2CD77CC5265324B80018C251 /* Model.swift in Sources */,
 				2CD77CAE265323820018C251 /* AppDelegate.swift in Sources */,
-				2CD77CC726532F4A0018C251 /* MGameViewModel.swift in Sources */,
+				2CD77CC726532F4A0018C251 /* EMGameViewModel.swift in Sources */,
+				2C4232C4265B8E0A00F871EA /* Array+Only.swift in Sources */,
 				2CD77CB0265323820018C251 /* SceneDelegate.swift in Sources */,
 				2CD77CB5265323820018C251 /* myStanfordGame1.xcdatamodeld in Sources */,
-				2CD77CB2265323820018C251 /* MGameView.swift in Sources */,
+				2C4232BB265B8C1600F871EA /* Grid.swift in Sources */,
+				2C4232C2265B8E0100F871EA /* Array+Itentifiable.swift in Sources */,
+				2CD77CB2265323820018C251 /* EMGameView.swift in Sources */,
+				2C4232C0265B8D9A00F871EA /* GridLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
