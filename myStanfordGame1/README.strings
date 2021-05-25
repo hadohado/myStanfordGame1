@@ -1,0 +1,16 @@
+/* 
+  README.strings
+  myStanfordGame1
+
+  Created by ha tuong do on 5/25/21.
+  
+*/
+
+/*
+ Apple phone co-ordinate start at upper left corner
+ increasing Y is downward
+ increasing X is left
+ 
+ Angle 0 degree start horizontally to the right
+ so if we want to start at angle straight up, angle should be Angle.degree(0 - 90)
+ */

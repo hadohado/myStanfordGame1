@@ -8,6 +8,7 @@
 import Foundation
 
 extension Array {
+    // var only needs to be public
     var only: Element? {
         self.count == 1 ? first : nil
     }

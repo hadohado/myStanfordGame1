@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C28160B265DA2F600588559 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28160A265DA2F600588559 /* Pie.swift */; };
+		2C28160D265DA3C500588559 /* aa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28160C265DA3C500588559 /* aa.swift */; };
+		2C28160F265DAEE100588559 /* README.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C28160E265DAEE100588559 /* README.strings */; };
 		2C4232BB265B8C1600F871EA /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4232BA265B8C1600F871EA /* Grid.swift */; };
 		2C4232C0265B8D9A00F871EA /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4232BF265B8D9A00F871EA /* GridLayout.swift */; };
 		2C4232C2265B8E0100F871EA /* Array+Itentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4232C1265B8E0100F871EA /* Array+Itentifiable.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C28160A265DA2F600588559 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		2C28160C265DA3C500588559 /* aa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aa.swift; sourceTree = "<group>"; };
+		2C28160E265DAEE100588559 /* README.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = README.strings; sourceTree = "<group>"; };
 		2C4232BA265B8C1600F871EA /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		2C4232BF265B8D9A00F871EA /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		2C4232C1265B8E0100F871EA /* Array+Itentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Itentifiable.swift"; sourceTree = "<group>"; };
@@ -77,6 +83,8 @@
 				2C4232BF265B8D9A00F871EA /* GridLayout.swift */,
 				2C4232C3265B8E0A00F871EA /* Array+Only.swift */,
 				2C4232C1265B8E0100F871EA /* Array+Itentifiable.swift */,
+				2C28160A265DA2F600588559 /* Pie.swift */,
+				2C28160C265DA3C500588559 /* aa.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -100,6 +108,7 @@
 		2CD77CAC265323820018C251 /* myStanfordGame1 */ = {
 			isa = PBXGroup;
 			children = (
+				2C28160E265DAEE100588559 /* README.strings */,
 				2C4232BC265B8D3F00F871EA /* Delegate */,
 				2C4232BD265B8D5900F871EA /* MVVM */,
 				2C4232BE265B8D6E00F871EA /* Support */,
@@ -177,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C28160F265DAEE100588559 /* README.strings in Resources */,
 				2CD77CBD265323830018C251 /* LaunchScreen.storyboard in Resources */,
 				2CD77CBA265323830018C251 /* Preview Assets.xcassets in Resources */,
 				2CD77CB7265323830018C251 /* Assets.xcassets in Resources */,
@@ -191,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CD77CC5265324B80018C251 /* Model.swift in Sources */,
+				2C28160D265DA3C500588559 /* aa.swift in Sources */,
 				2CD77CAE265323820018C251 /* AppDelegate.swift in Sources */,
 				2CD77CC726532F4A0018C251 /* EMGameViewModel.swift in Sources */,
 				2C4232C4265B8E0A00F871EA /* Array+Only.swift in Sources */,
@@ -198,6 +209,7 @@
 				2CD77CB5265323820018C251 /* myStanfordGame1.xcdatamodeld in Sources */,
 				2C4232BB265B8C1600F871EA /* Grid.swift in Sources */,
 				2C4232C2265B8E0100F871EA /* Array+Itentifiable.swift in Sources */,
+				2C28160B265DA2F600588559 /* Pie.swift in Sources */,
 				2CD77CB2265323820018C251 /* EMGameView.swift in Sources */,
 				2C4232C0265B8D9A00F871EA /* GridLayout.swift in Sources */,
 			);
