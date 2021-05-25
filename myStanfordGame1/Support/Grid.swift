@@ -9,8 +9,9 @@ import SwiftUI
 
 // struct Grid<Item, ItemView> : View  {
 struct Grid<Item, ItemView> : View where Item: Identifiable, ItemView: View {
-    var items: [Item]
-    var viewForItem: (Item) -> ItemView // viewForItem() is a function defined in E..MemoryGameView.swift
+    private var items: [Item]   // is public only if you ask people to init it
+                                // but since we do init() ourself inside this struct, it can be private
+    private var viewForItem: (Item) -> ItemView // viewForItem() is a function defined in E..MemoryGameView.swift
     
     init(_ items: [Item], viewForItem: @escaping (Item) -> ItemView) {
         self.items = items
@@ -23,7 +24,7 @@ struct Grid<Item, ItemView> : View where Item: Identifiable, ItemView: View {
             }
     }
     
-    func body1(for layout: GridLayout) -> some View {
+    private func body1(for layout: GridLayout) -> some View {
         ForEach(items) { item in
             // body2(for: item, in: layout)
             viewForItem(item)

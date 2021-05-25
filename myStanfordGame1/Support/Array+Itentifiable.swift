@@ -9,6 +9,7 @@
 import Foundation
 
 extension Array where Element: Identifiable {
+    // need firstIndex() to be public
     func firstIndex(matching: Element) -> Int? { // was -> Int
         for index in 0..<self.count {
             if self[index].id == matching.id {

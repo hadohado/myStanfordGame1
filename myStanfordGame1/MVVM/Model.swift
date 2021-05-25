@@ -5,26 +5,17 @@
 //  Created by ha tuong do on 5/17/21.
 //  Model for Memory Game
 
+//  lecture 5: Access control: private or private(set)
+//  choose()should be public because user choose card to play game
+//  init() should be public
+
 import Foundation
 
 struct MGameModel<Content> where Content: Equatable {
-  
-    var cards: [Card] // line 12
-    
-    
-    
-    /*
-    init(numPairsOfCards: Int, emojis: [String] ) {
-        // self.cards = []
-        self.cards = Array<Card>() // initialize cards on line 12 to empty Card array
-        for idx in 0..<numPairsOfCards {
-            let content = emojis[idx]
-            cards.append(Card(id: idx * 2     , content: content))
-            cards.append(Card(id: idx * 2 + 1 , content: content))
-        }
-        cards.shuffle()
-    }
-*/
+    // when people get these cards, they only get a copy of it
+    private(set) var cards: [Card] // dont use private since ViewModel can't no longer access model.cards
+    // var cards: [Card] // line 12
+    // private(set) means setting the cards is private but reading by ViewModel is ok
     
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> Content ) {
         cards = Array<Card>()
@@ -34,6 +25,7 @@ struct MGameModel<Content> where Content: Equatable {
             cards.append(Card(id: pairIndex * 2    ,  content: content) )
             cards.append(Card(id: pairIndex * 2 + 1,  content: content) )
         }
+        cards.shuffle()
     }
     
     struct Card: Identifiable {
@@ -44,8 +36,8 @@ struct MGameModel<Content> where Content: Equatable {
         var content: Content
     }
     
-    
-    var indexOfTheOneAndOnlyFaceUpCard: Int? {
+    // change to private 5-24-2021
+    private var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
         set {
             for index in cards.indices {

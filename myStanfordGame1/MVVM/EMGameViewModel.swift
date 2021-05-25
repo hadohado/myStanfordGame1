@@ -11,14 +11,17 @@ class EMGameViewModel : ObservableObject {
     static let emojis: Array<String> = ["😋", "💛", "🍒", "☘️", "👩‍❤️‍👨", "🧲", "🈸", "🇺🇳","🦋" ]
     static let myImage = UIImage(named: "parrot")
     static let emojisImage: Array<UIImage> = [myImage!]
-    // @Published  var model: MGameModel<String> = MGameModel(numPairsOfCards: emojis.count, emojis: emojis)
+ 
+//    @Published private var model: MGameModel<String>
+//        = MGameModel<String>( numberOfPairsOfCards: emojis.count) { pairIndex  in return emojis[pairIndex] }
     
-    // @Published  var model: MGameModel<String>
-    @Published private var model: MGameModel<String>
-        = MGameModel<String>( numberOfPairsOfCards: emojis.count) { pairIndex  in return emojis[pairIndex] }
-        // = MGameModel(numPairsOfCards: emojis.count, emojis: emojis)
+    @Published private var model: MGameModel<String> = creaateEMGame()
     
-    
+    private static func creaateEMGame() -> MGameModel<String> {
+        let emojis: Array<String> = ["😋", "💛", "🍒", "☘️", "👩‍❤️‍👨", "🧲", "🈸", "🇺🇳","🦋" ]
+        return MGameModel<String>( numberOfPairsOfCards: emojis.count) { pairIndex  in
+            return emojis[pairIndex] }
+    }
     
     var cards: Array<MGameModel<String>.Card> {
         return model.cards
