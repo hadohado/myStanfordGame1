@@ -69,6 +69,9 @@ struct CardView: View {
             .cardify(isFaceUp: card.isFaceUp)
             // .modifier ( Cardify(isFaceUp:  card.isFaceUp))
             .transition(AnyTransition.scale) // 2 card matched: matching cards shrink !
+            .rotation3DEffect(
+                Angle.degrees(card.isFaceUp ? 0: 180), axis: (0,1,0) )
+                                                          // /*@START_MENU_TOKEN@*/(x: 0.0, y: 1.0, z: 0.0)/*@END_MENU_TOKEN@*/            )
             // Circle()
         }
     }
