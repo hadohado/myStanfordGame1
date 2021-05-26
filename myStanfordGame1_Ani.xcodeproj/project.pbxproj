@@ -35,7 +35,7 @@
 		2C4232BF265B8D9A00F871EA /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		2C4232C1265B8E0100F871EA /* Array+Itentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Itentifiable.swift"; sourceTree = "<group>"; };
 		2C4232C3265B8E0A00F871EA /* Array+Only.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
-		2CD77CAA265323820018C251 /* myStanfordGame1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myStanfordGame1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CD77CAA265323820018C251 /* myStanfordGame1_Ani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myStanfordGame1_Ani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD77CAD265323820018C251 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CD77CAF265323820018C251 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2CD77CB1265323820018C251 /* EMGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMGameView.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		2CD77CAB265323820018C251 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CD77CAA265323820018C251 /* myStanfordGame1.app */,
+				2CD77CAA265323820018C251 /* myStanfordGame1_Ani.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2CD77CA9265323820018C251 /* myStanfordGame1 */ = {
+		2CD77CA9265323820018C251 /* myStanfordGame1_Ani */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CD77CC1265323830018C251 /* Build configuration list for PBXNativeTarget "myStanfordGame1" */;
+			buildConfigurationList = 2CD77CC1265323830018C251 /* Build configuration list for PBXNativeTarget "myStanfordGame1_Ani" */;
 			buildPhases = (
 				2CD77CA6265323820018C251 /* Sources */,
 				2CD77CA7265323820018C251 /* Frameworks */,
@@ -147,9 +147,9 @@
 			);
 			dependencies = (
 			);
-			name = myStanfordGame1;
+			name = myStanfordGame1_Ani;
 			productName = myStanfordGame1;
-			productReference = 2CD77CAA265323820018C251 /* myStanfordGame1.app */;
+			productReference = 2CD77CAA265323820018C251 /* myStanfordGame1_Ani.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -166,7 +166,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2CD77CA5265323820018C251 /* Build configuration list for PBXProject "myStanfordGame1" */;
+			buildConfigurationList = 2CD77CA5265323820018C251 /* Build configuration list for PBXProject "myStanfordGame1_Ani" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -179,7 +179,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2CD77CA9265323820018C251 /* myStanfordGame1 */,
+				2CD77CA9265323820018C251 /* myStanfordGame1_Ani */,
 			);
 		};
 /* End PBXProject section */
@@ -363,7 +363,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpinetest.myStanfordGame1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alpinetest.myStanfordGame1-Ani";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -384,7 +384,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alpinetest.myStanfordGame1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alpinetest.myStanfordGame1-Ani";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -394,7 +394,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CD77CA5265323820018C251 /* Build configuration list for PBXProject "myStanfordGame1" */ = {
+		2CD77CA5265323820018C251 /* Build configuration list for PBXProject "myStanfordGame1_Ani" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CD77CBF265323830018C251 /* Debug */,
@@ -403,7 +403,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CD77CC1265323830018C251 /* Build configuration list for PBXNativeTarget "myStanfordGame1" */ = {
+		2CD77CC1265323830018C251 /* Build configuration list for PBXNativeTarget "myStanfordGame1_Ani" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CD77CC2265323830018C251 /* Debug */,

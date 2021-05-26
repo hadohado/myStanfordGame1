@@ -23,19 +23,11 @@ struct EMGameView: View {
         })
         .padding()
         .foregroundColor(Color.orange)
-            // Text("hi there")
-            Image("parrot").imageScale(.small)
             
+        Image("parrot").imageScale(.small)
         }
-            
     }
-    
-//    let cornerRadius: CGFloat = 10.0
-//    let edgeLineWidth: CGFloat = 3.0
-//    let fontScaleFactor: CGFloat = 0.75
-    
 }
-
 
 
 struct CardView: View {
@@ -54,9 +46,11 @@ struct CardView: View {
                 Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(110), clockwire: true)
                     .padding(5).opacity(0.4)
                 Text(card.content).font(Font.system(size: fontSize(for: size)))
+                    .rotationEffect(Angle.degrees(card.isMatched ? 180 : 0)) // animate
             }
             .cardify(isFaceUp: card.isFaceUp)
             // .modifier ( Cardify(isFaceUp:  card.isFaceUp))
+            // Circle()
         }
     }
     
