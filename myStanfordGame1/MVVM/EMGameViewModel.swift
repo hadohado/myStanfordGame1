@@ -18,7 +18,8 @@ class EMGameViewModel : ObservableObject {
     @Published private var model: MGameModel<String> = creaateEMGame()
     
     private static func creaateEMGame() -> MGameModel<String> {
-        let emojis: Array<String> = ["😋", "💛", "🍒", "☘️", "👩‍❤️‍👨", "🧲", "🈸", "🇺🇳","🦋" ]
+        let emojis: Array<String> = ["😋", "💛", "🍒", "☘️"]
+        // let emojis: Array<String> = ["😋", "💛", "🍒", "☘️", "👩‍❤️‍👨", "🧲", "🈸", "🇺🇳","🦋" ]
         return MGameModel<String>( numberOfPairsOfCards: emojis.count) { pairIndex  in
             return emojis[pairIndex] }
     }

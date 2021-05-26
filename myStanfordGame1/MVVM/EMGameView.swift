@@ -46,8 +46,13 @@ struct CardView: View {
                 Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(110), clockwire: true)
                     .padding(5).opacity(0.4)
                 Text(card.content).font(Font.system(size: fontSize(for: size)))
-                    .rotationEffect(Angle.degrees(card.isMatched ? 180 : 0)) // animate
-            }
+                    // add IMPLICIT animation: emoji flips 180 degree when there is matching
+                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0)) // animate
+                    .animation(card.isMatched ? Animation.linear(duration:  1).repeatForever(autoreverses: false) : .default)
+                    // .animation(Animation.linear(duration:  1).repeatForever(autoreverses: false))
+                    // .animation(Animation.linear(duration:  1).repeatForever())
+                    //.animation(Animation.linear(duration: 1))
+                    }
             .cardify(isFaceUp: card.isFaceUp)
             // .modifier ( Cardify(isFaceUp:  card.isFaceUp))
             // Circle()
