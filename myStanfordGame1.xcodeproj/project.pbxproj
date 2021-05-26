@@ -10,6 +10,7 @@
 		2C28160B265DA2F600588559 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28160A265DA2F600588559 /* Pie.swift */; };
 		2C28160D265DA3C500588559 /* aa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28160C265DA3C500588559 /* aa.swift */; };
 		2C28160F265DAEE100588559 /* README.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C28160E265DAEE100588559 /* README.strings */; };
+		2C281611265DCB2400588559 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C281610265DCB2400588559 /* Cardify.swift */; };
 		2C4232BB265B8C1600F871EA /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4232BA265B8C1600F871EA /* Grid.swift */; };
 		2C4232C0265B8D9A00F871EA /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4232BF265B8D9A00F871EA /* GridLayout.swift */; };
 		2C4232C2265B8E0100F871EA /* Array+Itentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4232C1265B8E0100F871EA /* Array+Itentifiable.swift */; };
@@ -29,6 +30,7 @@
 		2C28160A265DA2F600588559 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		2C28160C265DA3C500588559 /* aa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aa.swift; sourceTree = "<group>"; };
 		2C28160E265DAEE100588559 /* README.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = README.strings; sourceTree = "<group>"; };
+		2C281610265DCB2400588559 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		2C4232BA265B8C1600F871EA /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		2C4232BF265B8D9A00F871EA /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		2C4232C1265B8E0100F871EA /* Array+Itentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Itentifiable.swift"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				2CD77CC4265324B80018C251 /* Model.swift */,
 				2CD77CC626532F4A0018C251 /* EMGameViewModel.swift */,
 				2CD77CB1265323820018C251 /* EMGameView.swift */,
+				2C281610265DCB2400588559 /* Cardify.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				2CD77CC726532F4A0018C251 /* EMGameViewModel.swift in Sources */,
 				2C4232C4265B8E0A00F871EA /* Array+Only.swift in Sources */,
 				2CD77CB0265323820018C251 /* SceneDelegate.swift in Sources */,
+				2C281611265DCB2400588559 /* Cardify.swift in Sources */,
 				2CD77CB5265323820018C251 /* myStanfordGame1.xcdatamodeld in Sources */,
 				2C4232BB265B8C1600F871EA /* Grid.swift in Sources */,
 				2C4232C2265B8E0100F871EA /* Array+Itentifiable.swift in Sources */,
