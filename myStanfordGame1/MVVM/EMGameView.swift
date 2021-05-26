@@ -23,7 +23,11 @@ struct EMGameView: View {
         })
         .padding()
         .foregroundColor(Color.orange)
-            
+            Button(action: {
+                self.viewModel.resetGame()
+            }, label: {
+                Text("New Game")
+            })
         Image("parrot").imageScale(.small)
         }
     }

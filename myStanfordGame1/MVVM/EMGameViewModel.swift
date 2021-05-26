@@ -35,4 +35,9 @@ class EMGameViewModel : ObservableObject {
         // objectWillChange.send() // re-active, dont need object..() since we have @Published above
         model.chooseCard(card: card)
     }
+    
+    // MARK: - Intent for new game
+    func resetGame() {
+        model = EMGameViewModel.creaateEMGame()
+    }
 }

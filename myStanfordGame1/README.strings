@@ -6,6 +6,8 @@
   
 */
 
+// create new game: require an INTENT
+
 /*
  Apple phone co-ordinate start at upper left corner
  increasing Y is downward
