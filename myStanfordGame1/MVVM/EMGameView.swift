@@ -12,23 +12,31 @@ struct EMGameView: View {
     
     var body: some View {
         VStack {
-        // Grid take a func { card in ... } that return
-        //      a view & location of view to draw within the Grid
-        Grid(viewModel.cards, viewForItem: { card  in
-            CardView(card: card)
-                .onTapGesture {
-                    viewModel.choose(card: card)
-                }
-            .padding(5)
-        })
-        .padding()
-        .foregroundColor(Color.orange)
-            Button(action: {
-                self.viewModel.resetGame()
-            }, label: {
-                Text("New Game")
+            // Grid take a func { card in ... } that return
+            //      a view & location of view to draw within the Grid
+            Grid(viewModel.cards, viewForItem: { card  in
+                CardView(card: card)
+                    .onTapGesture {
+                        viewModel.choose(card: card)
+                    }
+                    .padding(5)
             })
-        Image("parrot").imageScale(.small)
+            .padding()
+            .foregroundColor(Color.orange)
+            
+            HStack {
+                Button(action: {
+                    // body: ()  <--   () means function to be coded !  so need { ... }
+                    // withAnimation(<#T##animation: Animation?##Animation?#>, <#T##body: () throws -> Result##() throws -> Result#>)
+                    withAnimation(Animation.easeIn)  {
+                        self.viewModel.resetGame()
+                    }
+                }, label: {
+                    Text("New Game")
+                })
+                
+                Image("parrot").imageScale(.small)
+            }
         }
     }
 }
