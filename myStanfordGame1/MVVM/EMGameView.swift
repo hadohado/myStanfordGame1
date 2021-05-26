@@ -15,11 +15,12 @@ struct EMGameView: View {
             // Grid take a func { card in ... } that return
             //      a view & location of view to draw within the Grid
             Grid(viewModel.cards, viewForItem: { card  in
-                CardView(card: card)
-                    .onTapGesture {
+                CardView(card: card).onTapGesture {
+                    withAnimation(.linear(duration: 1)) {
                         viewModel.choose(card: card)
                     }
-                    .padding(5)
+                }
+                .padding(5)
             })
             .padding()
             .foregroundColor(Color.orange)
@@ -28,7 +29,7 @@ struct EMGameView: View {
                 Button(action: {
                     // body: ()  <--   () means function to be coded !  so need { ... }
                     // withAnimation(<#T##animation: Animation?##Animation?#>, <#T##body: () throws -> Result##() throws -> Result#>)
-                    withAnimation(Animation.easeIn)  {
+                    withAnimation(Animation.easeIn(duration: 2))  {
                         self.viewModel.resetGame()
                     }
                 }, label: {
@@ -67,6 +68,7 @@ struct CardView: View {
                     }
             .cardify(isFaceUp: card.isFaceUp)
             // .modifier ( Cardify(isFaceUp:  card.isFaceUp))
+            .transition(AnyTransition.scale) // 2 card matched: matching cards shrink !
             // Circle()
         }
     }
