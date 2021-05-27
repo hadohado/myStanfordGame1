@@ -60,11 +60,23 @@ struct MGameModel<Content> where Content: Equatable {
         }
     }
     
-    
+    // add property observer didSet
     struct Card: Identifiable {
         var id: Int
-        var isFaceUp: Bool = false
-        var isMatched: Bool = false
+        // var isFaceUp: Bool = false
+        var isFaceUp: Bool = false {
+            didSet {
+                if isFaceUp { startUsingBonusTime() }
+                else { stopUsingBonusTime() }
+            }
+        }
+        // var isMatched: Bool = false
+        var isMatched: Bool = false {
+            didSet {
+                stopUsingBonusTime()
+            }
+        }
+        
         // var content: String
         var content: Content
         // }

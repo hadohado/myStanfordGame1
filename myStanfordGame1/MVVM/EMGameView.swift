@@ -56,8 +56,10 @@ struct CardView: View {
     private func body(for size: CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {
             ZStack {
-                Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(110), clockwire: true)
+                // Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(110 - 90), clockwire: true)
+                Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(-card.bonusRemaining*360 - 90), clockwire: true)
                     .padding(5).opacity(0.4)
+                
                 Text(card.content).font(Font.system(size: fontSize(for: size)))
                     // add IMPLICIT animation: emoji flips 180 degree when there is matching
                     .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0)) // animate

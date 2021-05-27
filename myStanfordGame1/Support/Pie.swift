@@ -7,10 +7,28 @@
 
 import SwiftUI
 
-struct Pie: Shape {
+// this Shape will be re-drawn over and over during animation with
+// these 2 things startAngle & endAngle being animated
+// things are being sliced up into little pieces by the animation system
+
+struct Pie: Shape { // all Shape already conforms to Animatable
     var startAngle: Angle
     var endAngle: Angle
     var clockwire: Bool = false
+    
+    // must add this var to get animation for this Shape
+    // we want to animate this Pie (represented by timer) (change the angle)
+    // we connect up 2 var startAngle, endAngle to our animation
+    var animatableData: AnimatablePair<Double, Double> { // EmptyAnimatableData
+        get {
+            AnimatablePair(startAngle.radians, endAngle.radians)
+        }
+        set {
+            startAngle = Angle.radians(newValue.first)
+            endAngle = Angle.radians(newValue.second)
+        }
+    }
+    
     
     func path(in rect: CGRect) -> Path {
         let center = CGPoint(x: rect.midX, y: rect.midY)
