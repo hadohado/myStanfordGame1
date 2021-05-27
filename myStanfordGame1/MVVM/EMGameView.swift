@@ -16,7 +16,7 @@ struct EMGameView: View {
             //      a view & location of view to draw within the Grid
             Grid(viewModel.cards, viewForItem: { card  in
                 CardView(card: card).onTapGesture {
-                    withAnimation(.linear(duration: 1)) {
+                    withAnimation(.linear(duration: 0.75 )) { // was 1
                         viewModel.choose(card: card)
                     }
                 }
@@ -29,7 +29,7 @@ struct EMGameView: View {
                 Button(action: {
                     // body: ()  <--   () means function to be coded !  so need { ... }
                     // withAnimation(<#T##animation: Animation?##Animation?#>, <#T##body: () throws -> Result##() throws -> Result#>)
-                    withAnimation(Animation.easeIn(duration: 2))  {
+                    withAnimation(Animation.easeInOut)  { // was also (duration: 2)
                         self.viewModel.resetGame()
                     }
                 }, label: {
@@ -61,7 +61,8 @@ struct CardView: View {
                 Text(card.content).font(Font.system(size: fontSize(for: size)))
                     // add IMPLICIT animation: emoji flips 180 degree when there is matching
                     .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0)) // animate
-                    .animation(card.isMatched ? Animation.linear(duration:  1).repeatForever(autoreverses: false) : .default)
+                    .animation(card.isMatched ? Animation.linear(duration:  1)
+                                .repeatForever(autoreverses: false) : .default)
                     // .animation(Animation.linear(duration:  1).repeatForever(autoreverses: false))
                     // .animation(Animation.linear(duration:  1).repeatForever())
                     //.animation(Animation.linear(duration: 1))

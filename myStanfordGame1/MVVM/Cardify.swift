@@ -33,6 +33,9 @@ struct Cardify:  AnimatableModifier { // ViewModifier
     func body (content: Content) -> some View {
         ZStack {
             
+            // new style: both emoji will rotate when 2 cards match
+            // card is already there, but hidden when face-down ?
+            //------------------------------------------------------
             // now always have 4 items on card (no if ..)
             // this code with opacity fix the problem: now both card emoji will rotate if matched
             Group {
@@ -40,11 +43,12 @@ struct Cardify:  AnimatableModifier { // ViewModifier
                 RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
                 content
             }
-            .opacity(isFaceUp ? 1: 0) // if face-down -> fully transparent opacity = 0
-            RoundedRectangle(cornerRadius: cornerRadius).fill()
-            .opacity(isFaceUp ? 0 : 1)
+                .opacity(isFaceUp ? 1: 0) // if face-down -> fully transparent opacity = 0
             
-                    
+            RoundedRectangle(cornerRadius: cornerRadius).fill()
+                .opacity(isFaceUp ? 0 : 1)
+            
+//  old style code (only 1 emoji rotate when 2 cards match !
 //            if isFaceUp {
 //                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).transition(.scale)
 //                RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
