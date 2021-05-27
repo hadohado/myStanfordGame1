@@ -53,29 +53,51 @@ struct CardView: View {
 
     }
     
+    // make our own temp var that can sync up with model for animation
+    @State private var animatedBonusRemaining: Double = 0
+    
+    private func startBonusTimeAnimation() {
+        animatedBonusRemaining = card.bonusRemaining
+        withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+            animatedBonusRemaining = 0
+        }
+    }
+    
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {
             ZStack {
                 // Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(110 - 90), clockwire: true)
                 // we can not use card.bonusRemaining directly inside EMGameView.swift
-                Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(-card.bonusRemaining*360 - 90), clockwire: true)
-                    .padding(5).opacity(0.4)
+                // Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(-card.bonusRemaining*360 - 90), clockwire: true)
+                // anytime this Pie come on screen, we want to sync up with our model
+                Group {
+                    if card.isConsumingBonusTime {
+                        Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(-animatedBonusRemaining*360 - 90), clockwire: true)
+                            .onAppear {
+                                self.startBonusTimeAnimation()
+                            }
+                    } else {
+                        Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(-card.bonusRemaining*360 - 90), clockwire: true)
+                        
+                    }
+                }
+                .padding(5).opacity(0.4)
                 
                 Text(card.content).font(Font.system(size: fontSize(for: size)))
                     // add IMPLICIT animation: emoji flips 180 degree when there is matching
                     .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0)) // animate
                     .animation(card.isMatched ? Animation.linear(duration:  1)
                                 .repeatForever(autoreverses: false) : .default)
-                    // .animation(Animation.linear(duration:  1).repeatForever(autoreverses: false))
-                    // .animation(Animation.linear(duration:  1).repeatForever())
-                    //.animation(Animation.linear(duration: 1))
-                    }
+                // .animation(Animation.linear(duration:  1).repeatForever(autoreverses: false))
+                // .animation(Animation.linear(duration:  1).repeatForever())
+                //.animation(Animation.linear(duration: 1))
+            }
             .cardify(isFaceUp: card.isFaceUp)
             // .modifier ( Cardify(isFaceUp:  card.isFaceUp))
             .transition(AnyTransition.scale) // 2 card matched: matching cards shrink !
             // .rotation3DEffect( Angle.degrees(card.isFaceUp ? 0: 180), axis: (0,1,0) )
-                                                          // (x: 0, y: 1, z: 0)            )
+            // (x: 0, y: 1, z: 0)            )
             // Circle()
         }
     }
