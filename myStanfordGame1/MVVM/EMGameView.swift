@@ -52,11 +52,13 @@ struct CardView: View {
         }
 
     }
+    
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {
             ZStack {
                 // Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(110 - 90), clockwire: true)
+                // we can not use card.bonusRemaining directly inside EMGameView.swift
                 Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(-card.bonusRemaining*360 - 90), clockwire: true)
                     .padding(5).opacity(0.4)
                 
