@@ -28,14 +28,6 @@ struct MGameModel<Content> where Content: Equatable {
         cards.shuffle()
     }
     
-    struct Card: Identifiable {
-        var id: Int
-        var isFaceUp: Bool = false
-        var isMatched: Bool = false
-        // var content: String
-        var content: Content
-    }
-    
     // change to private 5-24-2021
     private var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }
@@ -45,7 +37,10 @@ struct MGameModel<Content> where Content: Equatable {
             }
         }
     }
-
+    
+    
+    
+    
     //------------------------------------------------------------------
     // play game by choosing card to turn 1 or 2 cards up to match cards
     //------------------------------------------------------------------
@@ -65,6 +60,72 @@ struct MGameModel<Content> where Content: Equatable {
         }
     }
     
+    
+    struct Card: Identifiable {
+        var id: Int
+        var isFaceUp: Bool = false
+        var isMatched: Bool = false
+        // var content: String
+        var content: Content
+        // }
+        
+        var bonusTimeLimit: TimeInterval = 6
+        
+        // how long this card has ever been face up
+        private var faceUpTime: TimeInterval {
+            if let lastFaceUpDate = self.lastFaceUpDate {
+                return pastFaceUpTime + Date().timeIntervalSince(lastFaceUpDate)
+            } else {
+                return pastFaceUpTime
+            }
+        }
+        
+        // BONUS
+        
+        // the last time this card was turned face up (and isstill face
+        var lastFaceUpDate: Date?
+        
+        //    WIthe accumulated time this card has been face up inthe past
+        //    e not including the current time it's been face up if it is currently so)
+        var pastFaceUpTime: TimeInterval = 0
+        
+        //    W/how much time left before the bonus opportunity runs out
+        var bonusTimeRemaining: TimeInterval {
+            max(0, bonusTimeLimit - faceUpTime)
+        }
+        
+        // 17 percentage of the bonus time remaining
+        var bonusRemaining: Double {
+            (bonusTimeLimit > 0 && bonusTimeRemaining > 0)
+                ? bonusTimeRemaining/bonusTimeLimit : 0
+        }
+        
+        // whether the card was matched during the bonus time period
+        var hasEarnedBonus: Bool {
+            isMatched &&  bonusTimeRemaining > 0
+        }
+        
+        // whether we are currently face up, unmatched and have not yet used up the bonus window
+        var isConsumingBonusTime: Bool{
+            isFaceUp && !isMatched && bonusTimeRemaining > 0
+        }
+        
+        // called when the card transitions to face up state
+        private mutating func startUsingBonusTime() {
+            if isConsumingBonusTime, lastFaceUpDate == nil {
+                lastFaceUpDate = Date()
+            }
+        }
+        
+        //called when the card goes back face down (or gets matched)
+        private mutating func stopUsingBonusTime () {
+            pastFaceUpTime = faceUpTime
+            self.lastFaceUpDate = nil
+        }
+        
+    }
+    
+}
     // my initial code
     //    func chooseCard(card: Card) -> Int {
     //        return card.id
@@ -77,6 +138,6 @@ struct MGameModel<Content> where Content: Equatable {
 //        }
 //        return 0 // TODO: bogus! need to fix this code
 //    }
-}
+
 
 
