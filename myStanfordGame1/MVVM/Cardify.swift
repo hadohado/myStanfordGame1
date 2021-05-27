@@ -32,20 +32,27 @@ struct Cardify:  AnimatableModifier { // ViewModifier
     
     func body (content: Content) -> some View {
         ZStack {
-            if isFaceUp {
+            
+            // now always have 4 items on card (no if ..)
+            // this code with opacity fix the problem: now both card emoji will rotate if matched
+            Group {
                 RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).transition(.scale)
                 RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
-                
-                ///// wrong code, teacher does not have Pie here
-                ///// Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(110), clockwire: true).padding(5).opacity(0.4)
-                
                 content
-                // .transition(AnyTransition.scale) // 5-26 was (.scale)
-            } else {
-                RoundedRectangle(cornerRadius: cornerRadius).fill()
-                // .transition(AnyTransition.scale) // 5-26-2021
-                // was (.identity)
             }
+            .opacity(isFaceUp ? 1: 0) // if face-down -> fully transparent opacity = 0
+            RoundedRectangle(cornerRadius: cornerRadius).fill()
+            .opacity(isFaceUp ? 0 : 1)
+            
+                    
+//            if isFaceUp {
+//                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).transition(.scale)
+//                RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
+//                content
+//            } else {
+//                RoundedRectangle(cornerRadius: cornerRadius).fill()
+//            }
+            
         }
         // .transition(AnyTransition.opacity)
         .rotation3DEffect( Angle.degrees(rotation), axis: (0,1,0) )
