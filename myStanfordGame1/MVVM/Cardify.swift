@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+// 1st half of flip starting with card faced down: only show back of card (solid orange)
+// 2nd half of flip: only show front of card = emoji
+
+// must use AnimatableViewModifier, not Ani.. + ViewMod..
 // AnimatableModifier = ViewModifier + Animatable
 struct Cardify:  AnimatableModifier { // ViewModifier
     var rotation: Double // convert ViewModifier to be based on rotation
