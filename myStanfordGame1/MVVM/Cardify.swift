@@ -36,8 +36,8 @@ struct Cardify:  AnimatableModifier { // ViewModifier
                 RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).transition(.scale)
                 RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth)
                 
-                Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(110), clockwire: true)
-                    .padding(5).opacity(0.4)
+                ///// wrong code, teacher does not have Pie here
+                ///// Pie(startAngle: Angle.degrees(0.0 - 90), endAngle: Angle.degrees(110), clockwire: true).padding(5).opacity(0.4)
                 
                 content
                 // .transition(AnyTransition.scale) // 5-26 was (.scale)
